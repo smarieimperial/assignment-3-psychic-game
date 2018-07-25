@@ -9,19 +9,20 @@ document.querySelector("#id_guesses_left").innerHTML = guessesLeft;
 
 console.log("hello");
 
+// The user guesses the letter by pressing a key and the letter is saved in an array 
+// named 'guesses' and these are printed to the screen. 
+    var guesses = [];
+
+    function alertKey(y) {
+    guesses.push(y.key);
+    // confirm(y.key);
+    // next line of code will print to the screen the letters that the User has typed
+    document.querySelector("#guesses").innerText = guesses;
+}
+document.onkeyup = alertKey;
+
+
 // function startGame(play){
-    
-    // User guesses the letter by pressing a key and the letter is saved in array 
-    // and prints to screen. 
-//     var guesses = [];
-
-//     function alertKey(letter){
-//     guesses.push(letter.key);
-//     confirm(letter.key);
-//     // next code line prints to screen the letters that the User has picked so far.
-//     document.querySelector("#guesses").innerHTML = guesses;
-// }
-
 // var randomIndex = options[Math.floor(Math.random()*options.length)];
 // var computerOption = options[randomIndex];
 // var userPress = play.key;
@@ -48,5 +49,4 @@ console.log("hello");
 // }  
    
     // document.onkeydown = decrementCounter;
-    // document.onkeyup = alertKey;
     // document.onkeyup = startGame;
