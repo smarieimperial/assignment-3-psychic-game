@@ -1,8 +1,28 @@
 body {
-    background-color: lightblue;
+    background-color: rgba(235,233,249,1);
+    background-size: cover;
+    font-family: 'Comfortaa', cursive;
+  }
+body {
+    opacity: 0.5;
 }
+body:hover {
+    opacity: 1.0;
+   
+}
+/* #image {
+    opacity: 0.3;
+} */
 
 h1 {
-    color: blue;
+    color:  rgba(203,96,179,1);
+    text-align: center;
+    font-size: 60px;
+}
+p {
+    margin-left: 40px;
+}
+h2 {
+    margin-left: 40px;
 }
 
