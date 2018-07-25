@@ -1,7 +1,7 @@
 
 var wins = 0, losses = 0, guessesLeft = 10;
-var options = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
-
+// var options = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
+var options = ['a', 'b', 'c'];
 
 document.querySelector("#id_wins").innerHTML = wins;
 document.querySelector("#id_losses").innerHTML = losses;
@@ -21,20 +21,50 @@ console.log("hello");
 }
 document.onkeyup = alertKey;
 
+function win() {
+    wins++;
+    document.querySelector("#id_wins").innerHTML = wins;
+}
+function loss() {
+    losses--;
+    document.querySelector("#id_losses").innerHTML = losses;
+}
+ // decrement 'Guesses left' counts down from 10 to 1
+    function decrementCounter(){
+        guessesLeft = guessesLeft - 1;
+        document.querySelector('#id_guesses_left').innerHTML = guessesLeft;
+            if (guessesLeft == 1){
+                guessesLeft = 11;
+                document.querySelector("#id_losses").innerHTML = losses;                    
+            }
+        }
 
-// function startGame(play){
-// var randomIndex = options[Math.floor(Math.random()*options.length)];
-// var computerOption = options[randomIndex];
-// var userPress = play.key;
+function start(event) {
+    
+    var keyUserPressed = event.key;
 
-// if (userPress == computerOption){
-//         // increment 'wins'
-//         wins++;
-//         // print to screen results
-//         document.querySelector("#id_wins").innerHTML = wins;
+    var computerPickIndex = Math.floor(Math.random()*options.length);
+    var computerOption = options[computerPickIndex];
+    
+    document.querySelector("#guesses").innerText = keyUserPressed;
+	document.querySelector("#computerChoice").innerText = computerOption;
+    decrementCounter();
+		if (keyUserPressed == computerOption){
+
+			win();
+			
+		} else if (keyUserPressed != computerOption) {
+            loss();
+        }
+
+}
+document.onkeyup = start;
+
 
 //     } else if (userPress != computerOption) {
+
 //         // decrement 'Guesses left' counts down from 10 to 1
+
 //         function decrementCounter(){
 //             guessesLeft = guessesLeft - 1;
 //             document.querySelector('#id_guesses_left').innerHTML = guessesLeft;
@@ -46,7 +76,5 @@ document.onkeyup = alertKey;
 //             }
 //         }
 //     }
-// }  
    
-    // document.onkeydown = decrementCounter;
-    // document.onkeyup = startGame;
+    
