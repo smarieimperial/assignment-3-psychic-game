@@ -25,15 +25,19 @@ function win() {
     wins++;
     document.querySelector("#id_wins").innerHTML = wins;
 }
+
 function loss() {
     losses--;
     document.querySelector("#id_losses").innerHTML = losses;
 }
- // decrement 'Guesses left' counts down from 10 to 1
-    function decrementCounter(){
-        guessesLeft = guessesLeft - 1;
-        document.querySelector('#id_guesses_left').innerHTML = guessesLeft;
-            if (guessesLeft == 1){
+
+ // decrement 'Guesses left' counts down from 10 to 1 then restarts the count to 10
+ // I put the call for decrementCounter() inside of the function start() it's before the if/else
+ // statement
+function decrementCounter(){
+    guessesLeft = guessesLeft - 1;
+    document.querySelector('#id_guesses_left').innerHTML = guessesLeft;
+        if (guessesLeft == 1){
                 guessesLeft = 11;
                 document.querySelector("#id_losses").innerHTML = losses;                    
             }
@@ -45,18 +49,16 @@ function start(event) {
 
     var computerPickIndex = Math.floor(Math.random()*options.length);
     var computerOption = options[computerPickIndex];
-    
     document.querySelector("#guesses").innerText = keyUserPressed;
-	document.querySelector("#computerChoice").innerText = computerOption;
-    decrementCounter();
-		if (keyUserPressed == computerOption){
+    document.querySelector("#computerChoice").innerText = computerOption;
+            
+                decrementCounter();
 
-			win();
-			
-		} else if (keyUserPressed != computerOption) {
-            loss();
-        }
-
+                if (keyUserPressed == computerOption){
+                    win();
+                } else if (keyUserPressed != computerOption) {
+                    loss();
+                }
 }
 document.onkeyup = start;
 
