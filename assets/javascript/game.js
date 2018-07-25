@@ -1,15 +1,15 @@
 
 var wins = 0, losses = 0, guessesLeft = 10;
 // var options = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
-var options = ['a', 'b', 'c'];
+var options = ['a', 'b', 'c', 'd']; // used only 4 letters to make testing easy to control
 
 document.querySelector("#id_wins").innerHTML = wins;
 document.querySelector("#id_losses").innerHTML = losses;
 document.querySelector("#id_guesses_left").innerHTML = guessesLeft;
 
-console.log("hello");
+console.log("hello"); // added this for testing only
 
-// The user guesses the letter by pressing a key and the letter is saved in an array 
+// The user guesses the letter by pressing either 'a, b, c or d' and the letter is saved in an array 
 // named 'guesses' and these are printed to the screen. 
     var guesses = [];
 
