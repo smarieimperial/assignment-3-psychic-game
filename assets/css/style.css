@@ -34,3 +34,9 @@ footer {
     background-color: #efefef;
     text-align: center;
   }
+em {
+    color:  rgba(203,96,179,1);
+}
+h2 em {
+    text-align: center;
+}
