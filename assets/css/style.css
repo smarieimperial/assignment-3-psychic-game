@@ -10,10 +10,6 @@ body:hover {
     opacity: 1.0;
    
 }
-/* #image {
-    opacity: 0.3;
-} */
-
 h1 {
     color:  rgba(203,96,179,1);
     text-align: center;
@@ -36,7 +32,4 @@ footer {
   }
 em {
     color:  rgba(203,96,179,1);
-}
-h2 em {
-    text-align: center;
 }
