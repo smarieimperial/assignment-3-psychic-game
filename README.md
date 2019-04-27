@@ -1,5 +1,7 @@
 # psychic-game
 
+https://smarieimperial.github.io/assignment-3-psychic-game/
+
 1. In this assignment, you'll create one of two possible computer games: Word Guess or Psychic. These apps will run in the browser, and feature dynamically updated HTML and CSS powered by your JavaScript code.
 
 2. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
